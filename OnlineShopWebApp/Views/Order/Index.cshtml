@@ -1,0 +1,40 @@
+﻿@model OrderInputVM
+
+<div>
+    <h1 class="input__name">Введите данные для оформления заказа</h1>
+    <form class="input__cont" method="post" asp-controller="order" asp-action="buy">
+        <p>
+            <label class="input__title" asp-for="Name">Имя:</label><br />
+            <input class="input" asp-for="Name" />
+            <span class="validation__text" asp-validation-for="Name"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="Surname">Фамилия:</label><br />
+            <input class="input" asp-for="Surname" />
+            <span class="validation__text" asp-validation-for="Surname"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="Email">Электронный адрес:</label><br />
+            <input class="input" type="email" asp-for="Email" />
+            <span class="validation__text" asp-validation-for="Email"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="Tel">Номер телефона:</label><br />
+            <input class="input" type="tel" asp-for="Tel" />
+            <span class="validation__text" asp-validation-for="Tel"></span>
+        </p>
+        <p>
+            <label class="input__title">Адрес доставки:</label><br />
+            <input class="input" asp-for="Address" />
+            <span class="validation__text" asp-validation-for="Address"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="Comment">Комментарий:</label><br />
+            <textarea class="input__textarea" asp-for="Comment"></textarea>
+            <span class="validation__text" asp-validation-for="Comment"></span>
+        </p>
+        <p>
+            <input class="input__btm" type="submit" value="Отправить" />
+        </p>
+    </form>
+</div>

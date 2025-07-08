@@ -1,0 +1,37 @@
+@model Product
+
+<div class="text-center">
+	<div class="product__cont">
+		<div class="product__imd_cont">
+			@if (Model.ImagesPath.Count > 0)
+			{
+				<img class="product__imd" src=@Model.ImagesPath[0] />
+			}
+			else
+			{
+				<img class="product__imd" src="/images/NoImage.jpg" />
+			}
+		</div>
+		<div class="product__title_cont">
+			<span class="product__name">@Model.Name</span>
+			<p class="product__title">@Model.Description</p>
+			<span class="product__price">@string.Format("{0:f2}" + " p.", Model.Cost)</span>
+		</div>
+		<div class="product__cont_set">
+			<a class="btm" href="/Cart/Add/@Model.Id">Добавить в корзину</a>
+			<a class="btm" href="/home/index">Продолжить покупки</a>
+		</div>
+	</div>
+</div>
+@if (Model.ImagesPath.Count > 1)
+{
+	<h1>Дополнительные изображения</h1>
+	<div class="text-center">
+		@for (int i = 1; i < Model.ImagesPath.Count; i++)
+		{
+			<div class="product__imd_cont">
+				<img class="product__imd" src=@Model.ImagesPath[i] />
+			</div>
+		}
+	</div>
+}

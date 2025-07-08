@@ -1,0 +1,32 @@
+@model Like
+
+<div class="text-center">
+    @{
+        if (Model == null || Model.Products.Count == 0)
+        {
+            <h1>Избранное пусто.</h1>
+        }
+        else
+        {
+            <h1>Избранное</h1>
+            foreach (Product product in Model.Products)
+            {
+                <div class="cart__item-cont">
+                    <div class="cart__item-title">
+                        <span class="product__name">@product.Name</span>
+                        <span class="product__name">Цена: @string.Format("{0:f2}" + " p.", product.Cost)</span>
+                    </div>
+                    <div class="cart__item-cost">
+                        <div class="cart__btm-cont">
+                            <a class="btm_add" href="/Cart/Add/@product.Id"></a>
+                            <a class="btm_del" href="/Like/Delete/@product.Id"></a>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="cart__oll-cont">
+                <a class="btm" href="/Like/Clear">Очистить список</a>
+            </div>
+        }
+    }
+</div>

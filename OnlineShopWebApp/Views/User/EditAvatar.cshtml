@@ -1,0 +1,28 @@
+﻿@model User
+
+<div>
+	<h1 class="input__name">Изменить аватар</h1>
+	<div class="product__imd_cont">
+		@if (Model.ImagePath != "")
+		{
+			<img class="product__imd" src=@Model.ImagePath />
+		}
+		else
+		{
+			<img class="product__imd" src="/images/NoImage.jpg" />
+		}
+	</div>
+	<form class="input__cont" method="post" enctype="multipart/form-data" asp-controller="User" asp-action="EditAvatar">
+		<p>
+			<label class="input__title">Добавить изображение</label><br />
+			<input class="input" type="file" name="FormImage">
+		</p>
+		<p>
+			<input class="input__btm" type="submit" value="Изменить" />
+		</p>
+		<p>
+			<a class="btm" asp-controller="User" asp-action="DeleteAvatar">Удалить аватар</a>
+		</p>
+	</form>
+
+</div>

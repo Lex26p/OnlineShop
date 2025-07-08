@@ -1,0 +1,21 @@
+﻿@model OrderVM
+
+<div class="text-center">
+    @await Html.PartialAsync("AdminNav")
+    <div class="admin__cont">
+        <h1 class="text-center">Заказ номер @Model.Num</h1>
+        <p class="admin__order-text">Дата и время оформления @Model.DateCreate.ToString("dd.MM.yyyy hh:mm:ss")</p>
+        <p class="admin__order-text">Имя и фамилия - @Model.Name @Model.Surname</p>
+        <p class="admin__order-text">Номер телефона - @Model.Tel</p>
+        <p class="admin__order-text">Электронный адрес - @Model.Email</p>
+        <p class="admin__order-text">Адрес доставки - @Model.Address</p>
+        <p class="admin__order-text">Сумма заказа - @string.Format("{0:f2}" + " p.", Model.Cart.Cost)</p>
+        <p class="admin__order-text">Комментарий - @Model.Comment</p>
+        <div class="input__cont_flex">
+            <p class="admin__order-text">Статус - </p>
+             <form id="form" class="input__cont" method="post" asp-area="Admin" asp-controller="Order" asp-action="ChangeStatus" asp-route-id="@Model.Id">
+                <select asp-items="@(Html.GetEnumSelectList<OrderStatus>())" asp-for="Status" onchange="document.getElementById('form').submit()"></select>
+            </form>
+        </div>
+    </div>
+</div>

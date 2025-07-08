@@ -1,0 +1,18 @@
+﻿@model Order
+
+@{
+    if (Model != null)
+    {
+        <div class="text-center">
+            <h1 class="product__name">@Model.Name @Model.Surname, благодарим Вас за заказ!</h1>
+            <h1 class="product__name">Номер вашего заказа: @Model.Num</h1><br />
+            <h1 class="product__name">Дата и время заказа: @Model.DateCreate</h1>
+        </div>
+    }
+    else
+    {
+        <div class="text-center">
+            <h1 class="text-center">Заказ не создан!</h1>
+        </div>
+    }
+}

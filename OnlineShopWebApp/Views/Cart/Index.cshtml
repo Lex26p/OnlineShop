@@ -1,0 +1,35 @@
+@model CartVM
+
+<div class="text-center">
+    @{
+        if (Model == null || Model.Items.Count == 0)
+        {
+            <h1>Корзина пустая.</h1>
+        }
+        else
+        {
+            <h1>Корзина</h1>
+            foreach (var p in Model.Items)
+            {
+                <div class="cart__item-cont">
+                    <div class="cart__item-title">
+                        <span class="product__name">@p.Product.Name</span>
+                    </div>
+                    <div class="cart__item-cost">
+                        <div class="cart__btm-cont">
+                            <a class="cart__btm" href="/Cart/Reduce/@p.Product.Id">-</a>
+                            <span class="cart__cost">@p.Count</span>
+                            <a class="cart__btm" href="/Cart/Add/@p.Product.Id">+</a>
+                        </div>
+                        <span class="cart__cost-title">Стоимость: @string.Format("{0:f2}" + " p.", p.Cost)</span>
+                    </div>
+                </div>
+            }
+            <div class="cart__oll-cont">
+                <a class="btm" href="/Order/Index">Оформить заказ</a>
+                <a class="btm" href="/Cart/Clear">Очистить корзину</a>
+                <span class="cart__cost-title">Итого: @string.Format("{0:f2}" + " p.", Model.Cost)</span>
+            </div>
+        }
+    }
+</div>

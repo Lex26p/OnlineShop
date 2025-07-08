@@ -1,0 +1,14 @@
+﻿@model string
+
+@{
+    <a class="user__link" asp-area="Admin" asp-controller="Order" asp-action="Index">
+        @if (Model != null && Model != "")
+        {
+            <img class="user__link_imd" src=@Model />
+        }
+        else
+        {
+            <img class="user__link_imd" src="/images/NoImage.jpg" />
+        }
+    </a>
+}

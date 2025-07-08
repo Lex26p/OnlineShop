@@ -1,0 +1,36 @@
+﻿@model List<Role>
+
+<div class="text-center">
+    @await Html.PartialAsync("AdminNav")
+    @if (Model.Count > 0)
+    {
+        <div class="admin__cont">
+            <h1 class="text-center">Список заказов</h1>
+            <div class="admin__cont-title">
+                <span class="admin__order-name">Название</span>
+                <span class="admin__order-login">Описание</span>
+            </div>
+            @{
+                foreach (var p in Model)
+                {
+                    <div class="admin__cont-item">
+                        <span class="admin__order-name">@p.Name</span>
+                        <span class="admin__role-description">@p.Description</span>
+                        @if (p.Name != Consts.AdminRoleName)
+                        {
+                            <a class="admin__prod-link" asp-area="Admin" asp-controller="Role" asp-action="Edit" asp-route-id="@p.Id">Редактировать</a>
+                            <a class="admin__prod-link" asp-area="Admin" asp-controller="Role" asp-action="Delete" asp-route-id="@p.Id">Удалить</a>
+                        }
+                    </div>
+                }
+            }
+        </div>
+    }
+    else
+    {
+        <div class="admin__cont">
+            <h1 class="text-center">Нет ни одной роли.</h1>
+        </div>
+    }
+    <a class="btm" asp-area="Admin" asp-controller="Role" asp-action="Add">Добавить роль</a>
+</div>

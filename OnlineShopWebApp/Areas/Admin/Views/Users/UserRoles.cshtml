@@ -1,0 +1,59 @@
+﻿@model UserRolesVM
+
+<div class="text-center" style="display: block">
+    <h1 class="text-center">Список ролей пользователя @Model.UserName </h1>
+    @if (Model.Roles.Count > 0)
+    {
+        <div class="admin__cont">
+            <h1 class="text-center">Роли пользователя</h1>
+            <div class="admin__cont-title">
+                <span class="admin__order-name">Название</span>
+                <span class="admin__order-login">Описание</span>
+            </div>
+            @{
+                foreach (Role role in Model.Roles)
+                {
+                    <div class="admin__cont-item">
+                        <span class="admin__order-name">@role.Name</span>
+                        <span class="admin__role-description">@role.Description</span>
+                        <a class="admin__prod-link" asp-area="Admin" asp-controller="Users" asp-action="DeleteRole" asp-route-roleName="@role.Name" asp-route-id="@Model.Id">Удалить</a>
+                    </div>
+                }
+            }
+        </div>
+    }
+    else
+    {
+        <div class="admin__cont">
+            <h1 class="text-center">У пользователя @Model.UserName нет ролей.</h1>
+        </div>
+    }
+
+    @if (Model.RolesDB.Count > 0)
+    {
+        <div class="admin__cont">
+            <h1 class="text-center">Доступные роли</h1>
+            <div class="admin__cont-title">
+                <span class="admin__order-name">Название</span>
+                <span class="admin__order-login">Описание</span>
+            </div>
+            @{
+                foreach (var p in Model.RolesDB)
+                {
+                    <div class="admin__cont-item">
+                        <span class="admin__order-name">@p.Name</span>
+                        <span class="admin__role-description">@p.Description</span>
+                        <a class="admin__prod-link" asp-area="Admin" asp-controller="Users" asp-action="AddRole" asp-route-roleName="@p.Name" asp-route-id="@Model.Id">Добавить</a>
+                    </div>
+                }
+            }
+        </div>
+    }
+    else
+    {
+        <div class="admin__cont">
+            <h1 class="text-center">Нет доступных ролей</h1>
+        </div>
+    }
+    <a class="btm" asp-area="Admin" asp-controller="Users" asp-action="UserInfo" asp-route-id="@Model.Id">Назад</a>
+</div>

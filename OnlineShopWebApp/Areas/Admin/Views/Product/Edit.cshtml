@@ -1,0 +1,27 @@
+@model ProductVM
+
+<div>
+    <h1 class="input__name">Редактирование товара</h1>
+    <form class="input__cont" method="post" asp-area="Admin" asp-controller="Product" asp-action="Edit" asp-route-id="@Model.Id">
+        <input type="hidden" value="@Model.Id" name="Id" />
+        <p>
+            <label class="input__title" asp-for="Name">Название товара:</label><br />
+            <input class="input" asp-for="Name" />
+            <span class="validation__text" asp-validation-for="Name"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="Cost">Стоимость товара, руб.:</label><br />
+            <input class="input" asp-for="Cost" />
+            <span class="validation__text" asp-validation-for="Cost"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="Description">Комментарий:</label><br />
+            <textarea class="input__textarea" asp-for="Description"></textarea>
+            <span class="validation__text" asp-validation-for="Description"></span>
+        </p>
+        <p>
+            <input class="input__btm" type="submit" value="Изменить" />
+        </p>
+    </form>
+    <a class="btm" asp-area="Admin" asp-controller="Product" asp-action="EditImage" asp-route-id="@Model.Id">Изменить фото</a>
+</div>

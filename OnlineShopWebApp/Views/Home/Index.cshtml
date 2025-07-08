@@ -1,0 +1,41 @@
+@model List<Product>
+
+<div class="text-center">
+    <form class="input__cont" method="post" asp-controller="Home" asp-action="Search">
+        <p class="input__cont_flex">
+            <input class="input" type="text" name="request" />
+            <input class="input__btm" type="submit" value="Поиск" />
+        </p>
+    </form>
+</div>
+<div class="text-center">
+    @{
+        if (Model.Count > 0)
+        {
+            foreach (Product product in Model)
+            {
+                <div class="products__cont">
+                    @if (product.ImagesPath.Count > 0)
+                    {
+                        <img class="product__imd" src=@product.ImagesPath[0] />
+                    }
+                    else
+                    {
+                        <img class="product__imd" src="/images/NoImage.jpg" />
+                    }
+                    <div class="products__btm_cont">
+                        <a class="products__btm" href="/Product/index/@product.Id">@product.Name</a>
+                        <span class="products_cost">@string.Format("{0:f2}" + " p.", product.Cost)</span>
+                        <a class="btm" href="/Cart/Add/@product.Id">Добавить в корзину</a>
+                        <a class="btm" href="/Compare/Add/@product.Id">Сравнить</a>
+                    </div>
+                    <a class="product__like product__like_act" href="/Like/Add/@product.Id"></a>
+                </div>
+            }
+        }
+        else
+        {
+            <h1>По вашему запросу нет продуктов.</h1>
+        }
+    }
+</div>

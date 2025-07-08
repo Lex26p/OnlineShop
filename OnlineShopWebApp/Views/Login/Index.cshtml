@@ -1,0 +1,27 @@
+﻿@model LoginVM
+
+<div>
+    <h1 class="input__name">Вход</h1>
+    <form class="input__cont" method="post" asp-controller="Login" asp-action="logIn">
+        <input type="hidden" value="@Model.ReturnUrl" name="ReturnUrl" />
+        <p>
+            <label class="input__title" asp-for="Email">Электронный адрес:</label><br />
+            <input class="input" type="email" asp-for="Email" />
+            <span class="validation__text" asp-validation-for="Email"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="Password">Пароль:</label><br />
+            <input class="input" type="password" asp-for="Password" />
+            <span class="validation__text" asp-validation-for="Password"></span>
+        </p>
+        <p class="input__cont_flex">
+            <input class="input__checkbox" asp-for="Remember" value="true" />
+            <label class="input__title">Запомнить меня</label><br />
+        </p>
+        <div class="validation validation__text" asp-validation-summary="ModelOnly"></div>
+        <p>
+            <input class="input__btm" type="submit" value="Войти" />
+        </p>
+    </form>
+    <a class="link__registr" asp-area="" asp-controller="User" asp-action="Index" asp-route-ReturnUrl="@Model.ReturnUrl">Регистрация нового пользователя</a>
+</div>

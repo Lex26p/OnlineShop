@@ -1,0 +1,51 @@
+﻿@model NewUserVM
+
+<div>
+    <h1 class="input__name">Регистрация</h1>
+    <form class="input__cont" method="post" asp-controller="User" asp-action="Create" enctype="multipart/form-data">
+        <input type="hidden" value="@Model.ReturnUrl" name="ReturnUrl" />
+        <p>
+            <label class="input__title" asp-for="Name">Имя:</label><br />
+            <input class="input" asp-for="Name" />
+            <span class="validation__text" asp-validation-for="Name"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="Surname">Фамилия:</label><br />
+            <input class="input" asp-for="Surname" />
+            <span class="validation__text" asp-validation-for="Surname"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="Email">Электронный адрес:</label><br />
+            <input class="input" type="email" asp-for="Email" />
+            <span class="validation__text" asp-validation-for="Email"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="PhoneNumber">Номер телефона:</label><br />
+            <input class="input" type="tel" asp-for="PhoneNumber" />
+            <span class="validation__text" asp-validation-for="PhoneNumber"></span>
+        </p>
+        <p>
+            <label class="input__title">Адрес доставки:</label><br />
+            <input class="input" asp-for="Address" />
+            <span class="validation__text" asp-validation-for="Address"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="Password">Пароль:</label><br />
+            <input class="input" type="password" asp-for="Password" />
+            <span class="validation__text" asp-validation-for="Password"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="RePassword">Подтвердите пароль:</label><br />
+            <input class="input" type="password" asp-for="RePassword" />
+            <span class="validation__text" asp-validation-for="RePassword"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="FormImage">Добавить фото</label><br />
+            <input class="input" type="file" asp-for="FormImage">
+        </p>
+        <div class="validation validation__text" asp-validation-summary="ModelOnly"></div>
+        <p>
+            <input class="input__btm" type="submit" value="Зарегистрироваться" />
+        </p>
+    </form>
+</div>

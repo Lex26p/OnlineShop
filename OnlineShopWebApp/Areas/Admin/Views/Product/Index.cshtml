@@ -1,0 +1,24 @@
+﻿@model List<Product>
+
+<div class="text-center">
+    @await Html.PartialAsync("AdminNav")
+    <div class="admin__cont">
+        <h1 class="text-center">Список продуктов</h1>
+        <a class="nav__link" asp-area="Admin" asp-controller="Product" asp-action="Add">Добавить продукт</a>
+        <div class="admin__cont-title">
+            <span class="admin__prod-name">Наименование</span>
+            <span class="admin__prod-cost">Цена</span>
+        </div>
+        @{
+            foreach (var p in Model)
+            {
+                <div class="admin__cont-item">
+                    <a class="admin__prod-name" href="/Product/index/@p.Id">@p.Name</a>
+                    <span class="admin__prod-cost">@string.Format("{0:f2}" + " p.", p.Cost)</span>
+                    <a class="admin__prod-link" asp-area="Admin" asp-controller="Product" asp-action="Edit" asp-route-id="@p.Id">Редактировать</a>
+                    <a class="admin__prod-link" asp-area="Admin" asp-controller="Product" asp-action="Delete" asp-route-id="@p.Id">Удалить</a>
+                </div>
+            }
+        }
+    </div>
+</div>

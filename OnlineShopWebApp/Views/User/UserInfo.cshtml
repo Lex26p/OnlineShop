@@ -1,0 +1,30 @@
+﻿@model User
+
+<div class="text-center">
+    @await Html.PartialAsync("UserNav")
+    <div class="user__cont">
+        <div class="product__imd_cont">
+            @if (Model != null && Model.ImagePath != "")
+            {
+                <img class="product__imd" src=@Model.ImagePath />
+            }
+            else
+            {
+                <img class="product__imd" src="/images/NoImage.jpg" />
+            }
+        </div>
+        <p class="admin__order-text">Имя @Model?.Name</p>
+        <p class="admin__order-text">Фамилия - @Model?.Surname</p>
+        <p class="admin__order-text">Номер телефона - @Model?.PhoneNumber</p>
+        <p class="admin__order-text">Электронный адрес - @Model?.Email</p>
+        <div class="admin__cont_set">
+            <div class="admin__cont_link">
+                <span class="admin__link_title">Действия</span>
+                <a class="admin__link" asp-controller="User" asp-action="EditPassword">Сменить пароль</a>
+                <a class="admin__link" asp-controller="User" asp-action="EditUser">Изменить данные</a>
+                <a class="admin__link" asp-controller="User" asp-action="EditAvatar">Изменить аватар</a>
+                <a class="admin__link" asp-controller="User" asp-action="Delete">Удалить аккаунт</a>
+            </div>
+        </div>
+    </div>
+</div>

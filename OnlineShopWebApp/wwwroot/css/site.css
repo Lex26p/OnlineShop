@@ -1,0 +1,601 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+.header {
+    padding: 5px 20px 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__nav {
+    display: flex;
+}
+
+.nav-link {
+    margin: 0 0 0 20px;
+}
+
+.text-center {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products__cont {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    width: 300px;
+    height: 500px;
+    border: 2px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.products__logo {
+    width: 280px;
+    margin: 0 auto;
+}
+
+.products__btm_cont {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 200px;
+}
+
+.products__btm {
+    display: block;
+    margin: 0 auto;
+    color: black;
+    font-size: 28px;
+    font-weight: 700;
+    text-decoration: none;
+    font-style: normal;
+}
+
+.products_cost {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.product__cont {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product__imd_cont {
+    position: relative;
+    width: 30%;
+}
+
+.product__imd_btm {
+    position: absolute;
+    display: flex;
+    top: 3px;
+    right: 3px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: red;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.product__imd_btm-title {
+    font-size: 20px;
+    margin: auto;
+    font-weight: 700;
+}
+
+.product__imd {
+    width: 100%;
+    border-radius: 30px
+}
+
+.product__title_cont {
+    width: 30%;
+}
+
+.product__cont_set {
+    padding: 5px;
+    width: 30%;
+}
+
+.product__name {
+    padding: 5px;
+    text-align: start;
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.product__title {
+    padding: 5px;
+    text-align: start;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.product__price {
+    padding: 5px;
+    display: block;
+    font-size: 40px;
+    font-weight: 700;
+    color: blue;
+    text-align: start;
+}
+
+.btm {
+    margin: 0 auto 10px auto;
+    display: block;
+    width: 280px;
+    height: 50px;
+    text-decoration: none;
+    font-style: normal;
+    color: black;
+    background-color: #00DFC4;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+    .btm:hover {
+        background-color: white;
+        border: 2px solid black;
+    }
+
+.cart__item-cont {
+    margin: 0 0 10px 0;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    border: 2px solid lightsteelblue;
+    border-radius: 10px;
+}
+
+.cart__item-title {
+    display: flex;
+}
+
+.cart__item-cost {
+    display: flex;
+    align-items: center;
+}
+
+.cart__item-cont:hover {
+    background-color: whitesmoke;
+}
+
+.cart__imd {
+    margin: 0 20px 0 0;
+    width: 80px;
+    border-radius: 10px;
+}
+
+.cart__btm-cont {
+    margin: 0 40px 0 0;
+    display: flex;
+    align-items: center;
+}
+
+.cart__btm {
+    width: 50px;
+    height: 50px;
+    border: 2px solid lightsteelblue;
+    text-decoration: none;
+    font-style: normal;
+    font-size: 54px;
+    font-weight: 500;
+    line-height: 35px;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    color: black;
+}
+
+.cart__cost {
+    margin: 10px;
+    min-width: 50px;
+    height: 50px;
+    border: 2px solid lightsteelblue;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 45px;
+    border-radius: 10px;
+}
+
+.cart__cost-title {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.cart__oll-cont {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.input__name {
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.input__cont {
+    margin: 0 auto;
+    width: 400px;
+}
+
+.input__title {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.input {
+    width: 400px;
+    border: 2px solid blue;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+.input__textarea {
+    width: 400px;
+    height: 100px;
+    border: 2px solid blue;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.input__btm {
+    background-color: #00DFC4;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.compare__cont {
+    margin: 0 0 20px 0;
+    display: flex;
+    width: 100%;
+    border: 1px solid lightsteelblue;
+}
+
+.compare__cont-title {
+    width: 200px;
+    margin: 10px;
+    border: 1px solid lightsteelblue;
+}
+
+.compare__cont-btm {
+    height: 50px;
+    margin: 0 0 20px 0;
+}
+
+.compare__title {
+    display: block;
+    margin: 0 0 20px 0;
+    width: 100%;
+    height: 100px;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: start;
+    border: 2px solid lightsteelblue;
+    border-radius: 10px;
+}
+
+.compare__cont-content {
+    width: 300px;
+    margin: 10px;
+}
+
+.compare__cont-scroll {
+    overflow-x: scroll;
+    display: flex;
+}
+
+.compare__cont {
+    margin: 0 0 20px 0;
+    display: flex;
+    width: 100%;
+    border: 1px solid lightsteelblue;
+}
+
+.compare__cont-title {
+    width: 200px;
+    margin: 10px;
+    border: 1px solid lightsteelblue;
+}
+
+.compare__cont-btm {
+    height: 50px;
+    margin: 0 0 20px 0;
+}
+
+.compare__title {
+    display: block;
+    margin: 0 0 20px 0;
+    width: 100%;
+    height: 100px;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: start;
+    border: 2px solid lightsteelblue;
+    border-radius: 10px;
+}
+
+.compare__cont-content {
+    width: 300px;
+    margin: 10px;
+}
+
+.compare__cont-scroll {
+    overflow-x: scroll;
+    display: flex;
+}
+
+.product__like {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-image: url("/images/heart.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.product__like_act {
+    background-image: url("/images/heart_red.svg");
+}
+
+.btm_add {
+    margin: 0 30px 0 0;
+    width: 60px;
+    height: 60px;
+    background-image: url("/images/add.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.btm_del {
+    width: 60px;
+    height: 60px;
+    background-image: url("/images/del.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.input__cont_flex {
+    display: flex;
+}
+
+.input__checkbox {
+    margin: 0 10px 0 0;
+    width: 30px;
+}
+
+.link__registr {
+    margin: 0 auto;
+    display: block;
+    width: 330px;
+    text-decoration: none;
+    font-style: normal;
+    color: black;
+    font-size: 20px;
+}
+
+.nav__cont {
+    width: 200px;
+}
+
+.nav__link {
+    display: block;
+    text-decoration: none;
+    font-style: normal;
+    color: black;
+    font-size: 20px;
+    text-align: start !important;
+}
+
+.admin__cont-users {
+    text-decoration: none;
+    font-style: normal;
+    color: black;
+    display: flex;
+    margin: 0 0 5px 0;
+    border: 2px solid lightsteelblue;
+    width: 800px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    .admin__cont-users:hover {
+        background-color: lightcyan;
+    }
+
+.admin__cont-title {
+    display: flex;
+    width: 800px;
+}
+
+.user__cont {
+    width: 800px;
+}
+
+.admin__prod-id {
+    margin: 0 0 0 15px;
+    width: 100px;
+    text-align: start !important;
+}
+
+.admin__user-id {
+    margin: 0 0 0 15px;
+    width: 40px;
+    text-align: start !important;
+}
+
+.admin__prod-name {
+    width: 200px;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    color: black;
+    text-align: start !important;
+}
+
+.admin__user-name {
+    padding: 0 10px 0 0;
+    margin: 0 10px 0 0;
+    width: 200px;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    color: black;
+    text-align: start !important;
+    overflow: hidden;
+}
+
+.admin__order-name {
+    width: 100px;
+    text-decoration: none;
+    font-style: normal;
+    font-size: 16px;
+    color: black;
+    text-align: start !important;
+}
+
+.admin__prod-cost {
+    width: 100px;
+    text-align: start !important;
+}
+
+.admin__order-text {
+    text-align: start !important;
+}
+
+.admin__role-description {
+    text-align: start !important;
+    width: 400px;
+    overflow: hidden;
+}
+
+.admin__order-login {
+    width: 150px;
+    text-align: start !important;
+}
+
+.admin__cont-item {
+    display: flex;
+    margin: 0 0 5px 0;
+    border: 2px solid lightsteelblue;
+    width: 800px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    .admin__cont-item:hover {
+        background-color: lightcyan;
+    }
+
+.admin__prod-link {
+    margin: 0 20px;
+    text-decoration: none;
+    font-style: normal;
+    color: black;
+    font-size: 20px;
+    text-align: start !important;
+}
+
+.validation__text {
+    color: red;
+}
+
+.admin__cont_set {
+    width: 200px;
+    height: 40px;
+}
+
+.admin__cont_link {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    overflow: hidden;
+}
+
+    .admin__cont_link:hover {
+        height: 230px;
+    }
+
+.admin__link_title {
+    display: block;
+    margin: 3px auto 0 auto;
+    width: 180px;
+    height: 35px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.admin__link {
+    text-decoration: none;
+    font-style: normal;
+    color: black;
+    display: block;
+    margin: 5px auto 0 auto;
+    width: 180px;
+    height: 40px;
+    font-size: 20px;
+}
+
+    .admin__link:hover {
+        background-color: lightcyan;
+    }
+
+.user__link_imd {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    overflow: hidden;
+    border: 2px solid blue;
+    border-radius: 50%;
+}

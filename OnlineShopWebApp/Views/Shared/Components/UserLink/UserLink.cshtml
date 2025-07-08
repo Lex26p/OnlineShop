@@ -1,0 +1,14 @@
+﻿@model string
+
+@{
+    <a class="user__link" asp-controller="User" asp-action="UserInfo">
+        @if (Model != null && Model != "")
+        {
+            <img class="user__link_imd" src=@Model />
+        }
+        else
+        {
+            <img class="user__link_imd" src="/images/NoImage.jpg" />
+        }
+    </a>
+}

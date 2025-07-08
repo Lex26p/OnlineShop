@@ -1,0 +1,31 @@
+﻿@model EditUserVM
+
+<div>
+    <h1 class="input__name">Редактироване данных пользователя</h1>
+    <form class="input__cont" method="post" asp-controller="User" asp-action="EditUser">
+        <p>
+            <label class="input__title" asp-for="Name">Имя:</label><br />
+            <input class="input" asp-for="Name" />
+            <span class="validation__text" asp-validation-for="Name"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="Surname">Фамилия:</label><br />
+            <input class="input" asp-for="Surname" />
+            <span class="validation__text" asp-validation-for="Surname"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="PhoneNumber">Номер телефона:</label><br />
+            <input class="input" type="tel" asp-for="PhoneNumber" />
+            <span class="validation__text" asp-validation-for="PhoneNumber"></span>
+        </p>
+        <p>
+            <label class="input__title">Адрес доставки:</label><br />
+            <input class="input" asp-for="Address" />
+            <span class="validation__text" asp-validation-for="Address"></span>
+        </p>
+        <div class="validation validation__text" asp-validation-summary="ModelOnly"></div>
+        <p>
+            <input class="input__btm" type="submit" value="Сохранить" />
+        </p>
+    </form>
+</div>

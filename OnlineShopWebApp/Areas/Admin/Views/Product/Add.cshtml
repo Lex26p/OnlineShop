@@ -1,0 +1,29 @@
+@model ProductVM
+
+<div>
+    <h1 class="input__name">Добавление товара</h1>
+    <form class="input__cont" method="post" asp-area="Admin" asp-controller="Product" asp-action="Add" enctype="multipart/form-data">
+        <p>
+            <label class="input__title" asp-for="Name">Название товара:</label><br />
+            <input class="input" asp-for="Name" />
+            <span class="validation__text" asp-validation-for="Name"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="Cost">Стоимость товара, руб.:</label><br />
+            <input class="input" asp-for="Cost" />
+            <span class="validation__text" asp-validation-for="Cost"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="Description">Комментарий:</label><br />
+            <textarea class="input__textarea" asp-for="Description"></textarea>
+            <span class="validation__text" asp-validation-for="Description"></span>
+        </p>
+        <p>
+            <label class="input__title" asp-for="FormImage">Добавить изображение</label><br />
+            <input class="input" type="file" asp-for="FormImage" multiple>
+        </p>
+        <p>
+            <input class="input__btm" type="submit" value="Добавить" />
+        </p>
+    </form>
+</div>

@@ -1,0 +1,32 @@
+@model ProductVM
+
+<div>
+	<h1 class="input__name">Редактирование, добавление изображений</h1>
+	<form class="input__cont" method="post" enctype="multipart/form-data" asp-area="Admin" asp-controller="Product" asp-action="EditImage" asp-route-id="@Model.Id">
+		<p>
+			<label class="input__title">Добавить изображение</label><br />
+			<input class="input" type="file" name="FormImages" multiple>
+		</p>
+		<p>
+			<input class="input__btm" type="submit" value="Добавить" />
+		</p>
+		<p>
+			<a class="btm" asp-area="Admin" asp-controller="Product" asp-action="Edit" asp-route-id="@Model.Id">Назад</a>
+		</p>
+	</form>
+
+</div>
+
+@if (Model.ImagesPath.Count > 0)
+{
+	<h1>Дополнительные изображения</h1>
+	<div class="text-center">
+		@for (int i = 0; i < Model.ImagesPath.Count; i++)
+		{
+			<div class="product__imd_cont">
+				<img class="product__imd" src=@Model.ImagesPath[i] />
+				<a class="product__imd_btm" href="/Admin/Product/DeleteImage?id=@Model.Id&path=@Model.ImagesPath[i]"><span class="product__imd_btm-title">X</span></a>
+			</div>
+		}
+	</div>
+}

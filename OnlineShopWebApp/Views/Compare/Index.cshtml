@@ -1,0 +1,40 @@
+﻿@model Compare
+
+<div class="text-center">
+    @{
+        if (Model == null || Model.Products.Count == 0)
+        {
+            <h1>Нет товаров для сравнения.</h1>
+        }
+        else
+        {
+            <div class="compare__cont">
+                <div class="compare__cont-title">
+                    <div class="compare__cont-btm"></div>
+                    <span class="compare__title">Наименование</span>
+                    <span class="compare__title">Описание</span>
+                    <span class="compare__title">Цена</span>
+                </div>
+                <div class="compare__cont-scroll">
+                    @{
+                        foreach (var p in Model.Products)
+                        {
+                            <div class="compare__cont-content">
+                                <div class="compare__cont-btm">
+                                    <a class="btm" href="/Compare/Delete/@p.Id">Удалить</a>
+                                </div>
+                                <span class="compare__title">@p.Name</span>
+                                <span class="compare__title">@p.Description</span>
+                                <span class="compare__title">@string.Format("{0:f2}" + " p.", p.Cost)</span>
+                                <div class="compare__cont-btm">
+                                    <a class="btm" href="/Cart/Add/@p.Id">Добавить в корзину</a>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+            <a class="btm" href="/Compare/Clear">Очистить список</a>
+        }
+    }
+</div>
